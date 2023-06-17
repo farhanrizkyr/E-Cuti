@@ -1,0 +1,11 @@
+Admin
+username:admin
+password:admin
+
+Staff
+username:staff
+password:staff
+
+Pegawai
+username:pegawai
+password:pegawai
