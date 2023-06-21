@@ -37,7 +37,7 @@ class RegisterController extends Controller
         'email'=>request()->email,
         'password'=>Hash::make(request()->password),
        ]);
-       return redirect('/register-akun');
+       return redirect('/register-akun')->with('pesan','User Berhasil Di Buat');
    }
 
    public function destroy($id)

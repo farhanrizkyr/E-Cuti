@@ -4,6 +4,18 @@
 @section('content')
 
 <div class="container-fluid">
+
+	@if(Session::get('pesan'))
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Berhasil !</strong> {{Session::get('pesan')}}.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+@endif
+
+	<br><br>
 			<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
  <i class="fas fa-user-plus"></i> Tambah User

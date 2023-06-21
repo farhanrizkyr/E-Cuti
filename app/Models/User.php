@@ -17,7 +17,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    
+    const ROLE_PEGAWAI = 'pegawai';
+    const ROLE_ADMIN = 'admin';
+    const ROLE_STAFF = 'staff';
       protected $guarded=['id'];
     /**
      * The attributes that should be hidden for serialization.

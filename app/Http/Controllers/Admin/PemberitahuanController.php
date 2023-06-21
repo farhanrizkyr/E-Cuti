@@ -33,7 +33,7 @@ class PemberitahuanController extends Controller
       'body'=>Request()->body,
       ]);
 
-      return redirect('/pemberitahuan');
+      return redirect('/pemberitahuan')->with('pesan','Pemberitahuan Berhasil Di Buat');
 
       
     }
@@ -71,7 +71,7 @@ class PemberitahuanController extends Controller
       'body'=>Request()->body,
       ]);
 
-      return redirect('/admin/pemberitahuan');
+      return redirect('/pemberitahuan');
 
     }
 
