@@ -40,8 +40,20 @@
 			<tr>
 				<th>{{$no++;}}</th>
 				<td>{{$data->title}}</td>
-				
-				<td>{{$data->cuti_awal}}</td>
+  			    <td>{{$data->cuti_awal->isoformat('D, dddd MMMM Y ')}}</td>
+  			   <td>{{$data->cuti_akhir->isoformat('D, dddd MMMM Y ')}}</td>
+  			    <td>
+  			    @if($data->status=='belum_diterima')
+  			   <span class="badge badge-danger">Belum DiProsess</span>
+  			    @endif
+  			</td>
+  				<td>{!!$data->alasan!!}</td>
+  				<td>{{$data->catatan}}</td>
+  				<td>{{$data->created_at->isoformat('D, dddd MMMM Y ')}}</td>
+  				<td>
+  					
+  				</td>
+
 			</tr>
 			@endforeach
 		</tbody>

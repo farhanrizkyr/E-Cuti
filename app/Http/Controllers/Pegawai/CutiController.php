@@ -15,7 +15,7 @@ class CutiController extends Controller
     public function index()
     {
         $datas=Cuti::latest()->where('user_id',auth()->user()->id)->get();
-        return view('Pegawai.pengajuan_cuti',compact('datas','tgl'));
+        return view('Pegawai.pengajuan_cuti',compact('datas'));
     }
 
     /**

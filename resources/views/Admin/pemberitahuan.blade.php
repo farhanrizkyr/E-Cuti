@@ -4,6 +4,17 @@
 @section('content')
 
 <div class="container-fluid">
+	@if(Session::get('pesan'))
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Berhasil !</strong> {{Session::get('pesan')}}.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+@endif
+
+	<br><br>
 	<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">
  <i class="fas fa-plus"></i> Tambah Pemberitahuan
 </button>
@@ -28,7 +39,7 @@
 			<th>{{$no++;}}</th>
 			<td>{{$data->title}}</td>
 			<td><a href="/pemberitahuan/{{$data->slug}}">{!!$body!!}</a></td>
-				<td>{{$data->created_at->isoFormat('dddd,D MMMM Y')}}</td>
+				<td>{{$data->created_at->isoFormat('dddd,D MMMM Y,H')}}</td>
 			<td>
 				<a href="/pemberitahuan/edit/{{$data->slug}}" class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i> Edit</a>
 				<form method="post" action="/pemberitahuan/hapus/{{$data->id}}" class="d-inline">

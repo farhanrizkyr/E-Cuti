@@ -6,6 +6,7 @@ use  App\Http\Controllers\User\LoginController;
 use  App\Http\Controllers\Admin\PemberitahuanController;
 use  App\Http\Controllers\Admin\RegisterController;
 use  App\Http\Controllers\Pegawai\CutiController;
+use  App\Http\Controllers\Pegawai\PemberitahuanPegawaiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,4 +38,8 @@ Route::delete('/register-akun/hapus-akun/{id}',[RegisterController::class,'destr
 Route::get('/pegawai-pengajuan-cuti',[CutiController::class,'index']);
 Route::get('/pegawai/buat-pengajuan-cuti',[CutiController::class,'create']);
 Route::post('/pegawai/buat-pengajuan-cuti',[CutiController::class,'store']);
+
+
+//=====================PegawaiPemberitahuan======================================//
+Route::get('/pegawai-announcement',[PemberitahuanPegawaiController::class,'index']);
 
