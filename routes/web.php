@@ -38,8 +38,10 @@ Route::delete('/register-akun/hapus-akun/{id}',[RegisterController::class,'destr
 Route::get('/pegawai-pengajuan-cuti',[CutiController::class,'index']);
 Route::get('/pegawai/buat-pengajuan-cuti',[CutiController::class,'create']);
 Route::post('/pegawai/buat-pengajuan-cuti',[CutiController::class,'store']);
-
+Route::delete('/pegawai-pengajuan-cuti/hapus/{id}',[CutiController::class,'destroy']);
+Route::get('/pegawai-pengajuan-cuti-diterima',[CutiController::class,'status']);
 
 //=====================PegawaiPemberitahuan======================================//
 Route::get('/pegawai-announcement',[PemberitahuanPegawaiController::class,'index']);
+Route::get('/pegawai-announcement/{slug}',[PemberitahuanPegawaiController::class,'more']);
 

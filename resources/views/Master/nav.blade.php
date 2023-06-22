@@ -98,7 +98,7 @@
             <h6 class="collapse-header">Sub Menu Pegawai</h6>
             <a class="collapse-item" href="/pegawai-pengajuan-cuti">Pengajuan Cuti</a>
             <a class="collapse-item" href="/pegawai-announcement">Pemberitahuan</a>
-            <a class="collapse-item" href="history-aktivity">History Aktivity</a>
+            <a class="collapse-item" href="/pegawai-pengajuan-cuti-diterima">Pengajuan Cuti Diterima</a>
           </div>
         </div>
       </li>

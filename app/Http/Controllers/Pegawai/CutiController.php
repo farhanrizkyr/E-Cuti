@@ -12,10 +12,23 @@ class CutiController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+       function __construct()
+  {
+    $this->middleware('auth');
+     $this->middleware('pegawai');
+  }
+  
     public function index()
     {
-        $datas=Cuti::latest()->where('user_id',auth()->user()->id)->get();
+        $datas=Cuti::latest()->where('user_id',auth()->user()->id)->wherein('status',['belum_diterima','tolak'])->get();
         return view('Pegawai.pengajuan_cuti',compact('datas'));
+    }
+
+    public function status()
+    {
+    $datas=Cuti::latest()->where('user_id',auth()->user()->id)->where('status','diterima')->get();
+        return view('Pegawai.pengajuan_cuti_diterima',compact('datas'));
     }
 
     /**
@@ -78,8 +91,11 @@ class CutiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $data=Cuti::find($id);
+        $data->delete();
+         return redirect('/pegawai-pengajuan-cuti')->with('pesan','Pengajuan Cuti Berhail Di Hapus');
+
     }
 }

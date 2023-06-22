@@ -12,7 +12,7 @@
   <div class="card-body">
     <h5 class="card-title">{{$data->title}}</h5>
     <p class="card-text">{!!$body!!}</p>
-    <a href="/announcement/{{$data->slug}}" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Lanjutkan</a>
+    <a href="/pegawai-announcement/{{$data->slug}}" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Lanjutkan</a>
   </div>
 </div>
 

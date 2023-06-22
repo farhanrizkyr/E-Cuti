@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use App\Models\User;
 class StaffMiddleware
 {
     /**
@@ -15,6 +15,10 @@ class StaffMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+         if ($request->user()->role == User::ROLE_STAFF) {
         return $next($request);
+    }
+
+     return redirect('/dashboard');
     }
 }
