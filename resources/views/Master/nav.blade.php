@@ -9,7 +9,7 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -44,7 +44,7 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -78,13 +78,13 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-       Menu Admin
+       Menu Pegawai
       </div>
      
       <li class="nav-item active">
@@ -99,6 +99,7 @@
             <a class="collapse-item" href="/pegawai-pengajuan-cuti">Pengajuan Cuti</a>
             <a class="collapse-item" href="/pegawai-announcement">Pemberitahuan</a>
             <a class="collapse-item" href="/pegawai-pengajuan-cuti-diterima">Pengajuan Cuti Diterima</a>
+             <a class="collapse-item" href="/pegawai-pengajuan-cuti-ditolak">Pengajuan Cuti Ditolak</a>
           </div>
         </div>
       </li>

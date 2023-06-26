@@ -40,8 +40,8 @@
 			<tr>
 				<th>{{$no++;}}</th>
 				<td>{{$data->title}}</td>
-  			    <td>{{$data->cuti_awal->isoformat('D, dddd MMMM Y ')}}</td>
-  			   <td>{{$data->cuti_akhir->isoformat('D, dddd MMMM Y ')}}</td>
+  			    <td>{{$data->cuti_awal->isoformat('dddd, DD MMMM Y ')}}</td>
+  			   <td>{{$data->cuti_akhir->isoformat('dddd, D MMMM Y ')}}</td>
   			    <td>
   			    @if($data->status=='belum_diterima')
   			   <span class="badge badge-warning">Belum DiProsess</span>
@@ -53,7 +53,7 @@
   			</td>
   				<td>{!!$data->alasan!!}</td>
   				<td>{{$data->catatan}}</td>
-  				<td>{{$data->created_at->isoformat('D, dddd MMMM Y ')}}</td>
+  				<td>{{$data->created_at->isoformat('dddd, D MMMM Y ')}}</td>
   				<td>
   					@if($data->status=='belum_diterima')
   					<form method="post" action="/pegawai-pengajuan-cuti/hapus/{{$data->id}}" class="d-inline">
@@ -62,15 +62,7 @@
   						<button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
   					</form>
 
-  					<a href="" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Edit</a>
-  					@endif
-
-  								@if($data->status=='tolak')
-  					<form method="post" action="/pegawai-pengajuan-cuti/hapus/{{$data->id}}" class="d-inline">
-  							@method('delete')
-  						@csrf
-  						<button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
-  					</form>
+  					<a href="/pegawai-pengajuan-cuti/edit-cuti/{{$data->id}}" class="btn btn-outline-warning"><i class="fas fa-edit"></i> Edit</a>
   					@endif
   				</td>
 

@@ -1,6 +1,6 @@
 @extends('master.tampilan')
-@section('title','List Pengajuan Cuti Diterima')
-@section('page','List Halaman Pengsjuan Cuti DiTerima')
+@section('title','List Pengajuan Cuti Ditolak')
+@section('page','List Halaman Pengsjuan Cuti DiTolak')
 @section('content')
 
 <div class="container-fluid">
@@ -31,8 +31,8 @@
   			    <td>{{$data->cuti_awal->isoformat('dddd, D MMMM Y ')}}</td>
   			   <td>{{$data->cuti_akhir->isoformat('dddd, D MMMM Y ')}}</td>
   			    <td>
-  			    @if($data->status=='diterima')
-  			   <span class="badge badge-success">DiTerima</span>
+  			    @if($data->status=='tolak')
+  			   <span class="badge badge-danger">DiTolak</span>
   			    @endif
   			</td>
   				<td>{!!$data->alasan!!}</td>

@@ -28,8 +28,8 @@
 			<tr>
 				<th>{{$no++;}}</th>
 				<td>{{$data->title}}</td>
-  			    <td>{{$data->cuti_awal->isoformat('dddd, D MMMM Y ')}}</td>
-  			   <td>{{$data->cuti_akhir->isoformat('dddd, D MMMM Y ')}}</td>
+  			    <td>{{$data->cuti_awal->isoformat('D, dddd MMMM Y ')}}</td>
+  			   <td>{{$data->cuti_akhir->isoformat('D, dddd MMMM Y ')}}</td>
   			    <td>
   			    @if($data->status=='diterima')
   			   <span class="badge badge-success">DiTerima</span>
@@ -37,7 +37,7 @@
   			</td>
   				<td>{!!$data->alasan!!}</td>
   				<td>{{$data->catatan}}</td>
-  				<td>{{$data->created_at->isoformat('dddd, D MMMM Y ')}}</td>
+  				<td>{{$data->created_at->isoformat('D, dddd MMMM Y ')}}</td>
   				
 
 			</tr>

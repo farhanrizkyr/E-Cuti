@@ -40,7 +40,9 @@ Route::get('/pegawai/buat-pengajuan-cuti',[CutiController::class,'create']);
 Route::post('/pegawai/buat-pengajuan-cuti',[CutiController::class,'store']);
 Route::delete('/pegawai-pengajuan-cuti/hapus/{id}',[CutiController::class,'destroy']);
 Route::get('/pegawai-pengajuan-cuti-diterima',[CutiController::class,'status']);
-
+Route::get('/pegawai-pengajuan-cuti-ditolak',[CutiController::class,'tolak']);
+Route::get('/pegawai-pengajuan-cuti/edit-cuti/{id}',[CutiController::class,'edit']);
+Route::post('/pegawai-pengajuan-cuti/proses-edit-cuti/{id}',[CutiController::class,'update']);
 //=====================PegawaiPemberitahuan======================================//
 Route::get('/pegawai-announcement',[PemberitahuanPegawaiController::class,'index']);
 Route::get('/pegawai-announcement/{slug}',[PemberitahuanPegawaiController::class,'more']);

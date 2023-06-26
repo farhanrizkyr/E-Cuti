@@ -21,8 +21,13 @@ class CutiController extends Controller
   
     public function index()
     {
-        $datas=Cuti::latest()->where('user_id',auth()->user()->id)->wherein('status',['belum_diterima','tolak'])->get();
+        $datas=Cuti::latest()->where('user_id',auth()->user()->id)->where('status',['belum_diterima'])->get();
         return view('Pegawai.pengajuan_cuti',compact('datas'));
+    }
+      public function tolak()
+    {
+        $datas=Cuti::latest()->where('user_id',auth()->user()->id)->where('status','tolak')->get();
+        return view('Pegawai.pengajuan_cuti_ditolak',compact('datas'));
     }
 
     public function status()
@@ -61,7 +66,7 @@ class CutiController extends Controller
 
         ]);
 
-        return redirect('/pegawai-pengajuan-cuti')->with('pesan','Pengajusn Cuti Berhail Di Kirim');
+        return redirect('/pegawai-pengajuan-cuti')->with('pesan','Pengajuan Cuti Berhail Di Kirim');
     }
 
     /**
@@ -77,15 +82,34 @@ class CutiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data=Cuti::find($id);
+         return view('Pegawai.edit',compact('data'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update($id)
     {
-        //
+        request()->validate([
+        'title'=>'required',
+        'cuti_awal'=>'required',
+        'cuti_akhir'=>'required',
+        'alasan'=>'required',
+
+        ]);
+
+        Cuti::find($id)->update([
+        'title'=>Request()->title,
+        'cuti_awal'=>Request()->cuti_awal,
+        'cuti_akhir'=>Request()->cuti_akhir,
+        'user_id'=>Auth::user()->id,
+        'alasan'=>Request()->alasan,
+
+        ]);
+
+        return redirect('/pegawai-pengajuan-cuti')->with('pesan','Pengajuan Cuti Berhail Di Edit');
     }
 
     /**
