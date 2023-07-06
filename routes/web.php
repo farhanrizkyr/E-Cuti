@@ -7,6 +7,8 @@ use  App\Http\Controllers\Admin\PemberitahuanController;
 use  App\Http\Controllers\Admin\RegisterController;
 use  App\Http\Controllers\Pegawai\CutiController;
 use  App\Http\Controllers\Pegawai\PemberitahuanPegawaiController;
+use  App\Http\Controllers\Staff\ListCutiController;
+use  App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +48,14 @@ Route::post('/pegawai-pengajuan-cuti/proses-edit-cuti/{id}',[CutiController::cla
 //=====================PegawaiPemberitahuan======================================//
 Route::get('/pegawai-announcement',[PemberitahuanPegawaiController::class,'index']);
 Route::get('/pegawai-announcement/{slug}',[PemberitahuanPegawaiController::class,'more']);
+//=====================ListStaffCuti======================================//
+Route::get('/staff/list-cuti-pegawai',[ListCutiController::class,'index']);
+Route::get('/staff/list-cuti-pegawai-ditolak',[ListCutiController::class,'tolak']);
+Route::get('/staff/list-cuti-pegawai-diterima',[ListCutiController::class,'terima']);
+Route::get('/staff/list-cuti-pegawai/jawab-pengajuan-cuti/{id}',[ListCutiController::class,'edit']);
+Route::post('/staff/list-cuti-pegawai/proses-jawab-pengajuan-cuti/{id}',[ListCutiController::class,'up']);
+//=====================UserPengaturan======================================//
+Route::get('/admin/pengaturan',[UserController::class,'index']);
+Route::get('/pengaturan/{username}/',[UserController::class,'edit']);
+Route::post('/proses-ubah/pengaturan/admin/{id}/',[UserController::class,'update']);
 

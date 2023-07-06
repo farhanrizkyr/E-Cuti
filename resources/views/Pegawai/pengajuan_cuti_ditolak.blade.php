@@ -36,7 +36,7 @@
   			    @endif
   			</td>
   				<td>{!!$data->alasan!!}</td>
-  				<td>{{$data->catatan}}</td>
+  				<td>{!!$data->catatan!!}</td>
   				<td>{{$data->created_at->isoformat('dddd, D MMMM Y ')}}</td>
   				
 

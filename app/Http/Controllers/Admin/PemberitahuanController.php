@@ -43,7 +43,7 @@ class PemberitahuanController extends Controller
     {
      $data=Pemberitahuan::find($id);
      $data->delete();
-      return redirect('/pemberitahuan');
+      return redirect('/pemberitahuan')->with('pesan','Pemberitahuan Berhasil Di Delete');
     }
     
     public function detail ($slug)
@@ -72,7 +72,7 @@ class PemberitahuanController extends Controller
       'body'=>Request()->body,
       ]);
 
-      return redirect('/pemberitahuan');
+      return redirect('/pemberitahuan')->with('pesan','Pemberitahuan Berhasil Di Edit');
 
     }
 

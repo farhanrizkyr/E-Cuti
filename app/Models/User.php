@@ -21,6 +21,12 @@ class User extends Authenticatable
     const ROLE_ADMIN = 'admin';
     const ROLE_STAFF = 'staff';
       protected $guarded=['id'];
+
+        public function users()
+    {
+        return $this->HasMany(Cuti::class);
+    }
+ 
     /**
      * The attributes that should be hidden for serialization.
      *

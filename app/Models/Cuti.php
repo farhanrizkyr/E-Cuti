@@ -10,6 +10,12 @@ class Cuti extends Model
     protected $guarded=['id'];
     protected $dates=['cuti_awal','cuti_akhir'];
     protected $casts = [ 'cuti_awal'=>'datetime','cuti_akhir'=>'datetime'];
+
+
+    public function user()
+    {
+        return $this->BelongsTo(User::class);
+    }
  
    
 }

@@ -29,7 +29,7 @@
             <h6 class="collapse-header">Sub Menu</h6>
             <a class="collapse-item" href="/pemberitahuan">Pemberitahuan</a>
             <a class="collapse-item" href="register-akun">Register</a>
-            <a class="collapse-item" href="history-aktivity">History Aktivity</a>
+     
           </div>
         </div>
       </li>
@@ -50,7 +50,7 @@
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-       Menu Admin
+       Menu Staff
       </div>
      
       <li class="nav-item active">
@@ -62,9 +62,9 @@
         <div id="collapsePage" class="collapse show" aria-labelledby="headingPage" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Sub Menu</h6>
-            <a class="collapse-item" href="/pemberitahuan">Pemberitahuan</a>
-            <a class="collapse-item" href="register-akun">Register</a>
-            <a class="collapse-item" href="history-aktivity">History Aktivity</a>
+            <a class="collapse-item" href="/staff/list-cuti-pegawai">List Cuti Pegawai</a>
+            <a class="collapse-item" href="/staff/list-cuti-pegawai-ditolak">List Cuti Pegawai DiTolak</a>
+            <a class="collapse-item" href="/staff/list-cuti-pegawai-diterima">List Cuti Pegawai DiTerima</a>
           </div>
         </div>
       </li>

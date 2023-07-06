@@ -9,3 +9,9 @@ password:staff
 Pegawai
 username:pegawai
 password:pegawai
+username:test
+password:test
+username:_farhranfarhan_
+password:farhan
+
+https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html
