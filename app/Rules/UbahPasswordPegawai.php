@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Rules;
-
+use Hash;
 use Illuminate\Contracts\Validation\Rule;
 
 class UbahPasswordPegawai implements Rule
@@ -25,7 +25,7 @@ class UbahPasswordPegawai implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+         return Hash::check($value, auth()->user()->password);
     }
 
     /**

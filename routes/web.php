@@ -7,8 +7,13 @@ use  App\Http\Controllers\Admin\PemberitahuanController;
 use  App\Http\Controllers\Admin\RegisterController;
 use  App\Http\Controllers\Pegawai\CutiController;
 use  App\Http\Controllers\Pegawai\PemberitahuanPegawaiController;
+use  App\Http\Controllers\Pegawai\UserPegawaiController;
+use  App\Http\Controllers\Pegawai\ChangePasswordPegawaiController;
 use  App\Http\Controllers\Staff\ListCutiController;
+use  App\Http\Controllers\Staff\UserStaffController;
 use  App\Http\Controllers\Admin\UserController;
+use  App\Http\Controllers\Admin\ChangePasswordAdmin;
+use  App\Http\Controllers\Staff\ChangePasswordStaffController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,4 +63,21 @@ Route::post('/staff/list-cuti-pegawai/proses-jawab-pengajuan-cuti/{id}',[ListCut
 Route::get('/admin/pengaturan',[UserController::class,'index']);
 Route::get('/pengaturan/{username}/',[UserController::class,'edit']);
 Route::post('/proses-ubah/pengaturan/admin/{id}/',[UserController::class,'update']);
+//=====================UserPassword======================================//
+Route::get('/admin/password',[ChangePasswordAdmin::class,'index']);
+Route::post('/admin/password',[ChangePasswordAdmin::class,'update']);
+//=====================UserPegawaiPengaturan======================================//
+Route::get('/pegawai-pengaturan',[UserPegawaiController::class,'index']);
+Route::get('/pegawai-pengaturan/{username}',[UserPegawaiController::class,'edit']);
+Route::post('/proses-ubah/pengaturan/pegawai/{id}',[UserPegawaiController::class,'update']);
+//=====================UserPasswordPegawai======================================//
+Route::get('/pegawai-password',[ChangePasswordPegawaiController::class,'index']);
+Route::post('/pegawai-password',[ChangePasswordPegawaiController::class,'update']);
+//=====================UserStaffPengaturan======================================//
+Route::get('/staff-pengaturan',[UserStaffController::class,'index']);
+Route::get('/staff-pengaturan/{username}',[UserStaffController::class,'edit']);
+Route::post('/proses-ubah/pengaturan/staff/{id}',[UserStaffController::class,'update']);
+//=====================UserPasswordStaff======================================//
+Route::get('/staff-password',[ChangePasswordStaffController::class,'index']);
+Route::post('/staff-password',[ChangePasswordStaffController::class,'update']);
 

@@ -14,4 +14,3 @@ password:test
 username:_farhranfarhan_
 password:farhan
 
-https://www.itsolutionstuff.com/post/laravel-change-password-with-current-password-validation-exampleexample.html

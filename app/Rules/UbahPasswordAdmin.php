@@ -3,7 +3,7 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-
+use Hash;
 class UbahPasswordAdmin implements Rule
 {
     /**
@@ -25,7 +25,7 @@ class UbahPasswordAdmin implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return Hash::check($value, auth()->user()->password);
     }
 
     /**

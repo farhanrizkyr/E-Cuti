@@ -17,11 +17,14 @@ class DashboardController extends Controller
   {
      $pan_u=Cuti::where('user_id',auth()->user()->id)->where('status',['belum_diterima'])->count();
      $not_u=Cuti::where('user_id',auth()->user()->id)->where('status',['tolak'])->count();
-     $t_u=Cuti::where('user_id',auth()->user()->id)->where('status',['tolak'])->count();
+     $t_u=Cuti::where('user_id',auth()->user()->id)->where('status',['diterima'])->count();
      $t_p=User::all()->count();
      $a_p=User::where('role','pegawai')->count();
      $t_a=User::where('role','admin')->count();
      $t_s=User::where('role','staff')->count();
-    return view('Dashboard.dashboard',compact('pan_u','not_u','t_u','t_p','a_p','t_a','t_s'));
+    $s_c=Cuti::all()->count();
+      $c_tolak=Cuti::where('status',['tolak'])->count();
+       $c_terima=Cuti::where('status',['tolak'])->count();
+    return view('Dashboard.dashboard',compact('pan_u','not_u','t_u','t_p','a_p','t_a','t_s','s_c','c_tolak','c_terima'));
   }
 }

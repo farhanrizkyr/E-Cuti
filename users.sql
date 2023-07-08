@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jun 2023 pada 17.40
+-- Waktu pembuatan: 08 Jul 2023 pada 03.12
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -45,9 +45,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `role`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Adminstrator', 'admin', 'admin', 'admin@gmail.com', NULL, '$2y$10$1dw7ckQdNLLTO5sTzPuV9.D5d6Qj9ffUMAHMSfoqaiQCYarj2.2dG', NULL, '2023-06-09 08:35:23', '2023-06-09 08:35:23'),
+(1, 'Adminstrator', 'admin', 'admin', 'admin@gmail.com', NULL, '$2y$10$vXr5n3akqcHmOGecXWzFOOMNFQz.N1/CY1mieTwSxKKhuivKe6g1u', NULL, '2023-06-09 08:35:23', '2023-07-08 01:00:26'),
 (2, 'Pegawai', 'pegawai', 'pegawai', 'pegawai@gmail.com', NULL, '$2y$10$ktXNi4KAJ9HAW.ng1.mH6OWuslGn6FE3k2x53e0gjijH3OMhTLroG', NULL, '2023-06-09 08:38:00', '2023-06-09 08:38:00'),
-(3, 'Staff', 'staff', 'staff', 'staff@gmail.com', NULL, '$2y$10$zX9xTtfW4sdqH3BAj3g2BesMYAIivVwtRLYa4IbZlLkdlC/q0fDt.', NULL, '2023-06-09 08:38:38', '2023-06-09 08:38:38');
+(3, 'Staff', 'staff', 'staff', 'staff@gmail.com', NULL, '$2y$10$zX9xTtfW4sdqH3BAj3g2BesMYAIivVwtRLYa4IbZlLkdlC/q0fDt.', NULL, '2023-06-09 08:38:38', '2023-06-09 08:38:38'),
+(4, 'Testing', 'testing', 'pegawai', 'testing@gmail.com', NULL, '$2y$10$xJeiEmxgoir4PFf56hvYpegWZMSf5o32jEPaIgL/znQQF1SpxUPN2', NULL, '2023-07-08 00:57:08', '2023-07-08 00:57:08'),
+(5, 'Farhan Rizky Ramadhan', '_farhanfarhan_', 'pegawai', 'farhan@gmail.com', NULL, '$2y$10$G0A2Midk66j1UbCeV/FSi.ch/lkeHVVwmk3AJQyWd5Q99uWqIbJRW', NULL, '2023-07-08 00:58:05', '2023-07-08 00:58:05');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +70,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
